@@ -1,0 +1,104 @@
+/* LastMileConnect - Main App & Shell Layout */
+
+.lmc-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.lmc-navbar {
+  background-color: var(--lmc-primary, #0F4C81);
+  color: #FFFFFF;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+}
+
+.lmc-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lmc-brand-logo {
+  font-size: 1.5rem;
+}
+
+.lmc-brand-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+}
+
+.lmc-brand-name span {
+  color: #2DD4BF;
+}
+
+.lmc-nav-links {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.lmc-nav-btn {
+  background: transparent;
+  color: #E2E8F0;
+  border: 1px solid transparent;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lmc-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+.lmc-nav-btn.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.lmc-main-content {
+  flex: 1;
+}
+
+.lmc-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.8rem;
+  color: #94A3B8;
+  background-color: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+}
+
+@media (max-width: 600px) {
+  .lmc-navbar {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  .lmc-nav-links {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .lmc-nav-btn {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+  }
+}

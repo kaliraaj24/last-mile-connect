@@ -1,0 +1,30 @@
+:root {
+  --lmc-primary: #0F4C81;
+  --lmc-primary-dark: #0A3357;
+  --lmc-teal: #0D9488;
+  --lmc-teal-hover: #0B7A70;
+  --lmc-teal-light: #CCFBF1;
+  --lmc-bg-page: #F8FAFC;
+  --lmc-bg-card: #FFFFFF;
+  --lmc-text-heading: #0F172A;
+  --lmc-text-body: #334155;
+  --lmc-text-muted: #64748B;
+  --lmc-border: #E2E8F0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-color: var(--lmc-bg-page);
+  color: var(--lmc-text-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+}

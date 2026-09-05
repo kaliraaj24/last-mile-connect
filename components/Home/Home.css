@@ -1,0 +1,173 @@
+/* LastMileConnect - Home Styles */
+
+.lmc-home-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #F8FAFC 0%, #EFF6FF 100%);
+  color: var(--lmc-text-body, #334155);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  padding: 2.5rem 1.25rem 4rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.lmc-home-wrapper {
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.lmc-home-hero {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+  text-align: center;
+}
+
+.lmc-home-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #CCFBF1;
+  color: #0F766E;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.lmc-home-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #0F4C81;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+}
+
+.lmc-home-title span {
+  color: #0D9488;
+}
+
+.lmc-home-subtitle {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 auto 1.75rem;
+  max-width: 500px;
+}
+
+.lmc-home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.lmc-home-primary-btn {
+  background: #0D9488;
+  color: #FFFFFF;
+  font-size: 1.05rem;
+  font-weight: 800;
+  padding: 1rem 2rem;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+}
+
+.lmc-home-primary-btn:hover {
+  background: #0B7A70;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+}
+
+.lmc-home-secondary-btn {
+  background: #F1F5F9;
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #CBD5E1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lmc-home-secondary-btn:hover {
+  background: #E2E8F0;
+}
+
+/* Feature Cards Grid */
+.lmc-home-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+}
+
+.lmc-home-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.lmc-home-card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.lmc-home-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 0.35rem;
+}
+
+.lmc-home-card-desc {
+  font-size: 0.82rem;
+  color: #64748B;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Stats Ribbon */
+.lmc-home-stats {
+  background: #0F4C81;
+  color: #FFFFFF;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.lmc-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.lmc-stat-value {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #CCFBF1;
+}
+
+.lmc-stat-label {
+  font-size: 0.72rem;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.15rem;
+}

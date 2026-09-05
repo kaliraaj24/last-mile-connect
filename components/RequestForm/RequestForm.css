@@ -1,0 +1,178 @@
+/* LastMileConnect - RequestForm Styles */
+
+.lmc-rf-container {
+  min-height: 100vh;
+  background-color: var(--lmc-bg-page, #F8FAFC);
+  color: var(--lmc-text-body, #334155);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  padding: 2rem 1.25rem 4rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.lmc-rf-card {
+  width: 100%;
+  max-width: 560px;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.lmc-rf-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.lmc-rf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #CCFBF1;
+  color: #0F766E;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.lmc-rf-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 0.5rem;
+}
+
+.lmc-rf-subtitle {
+  font-size: 0.9rem;
+  color: #64748B;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.lmc-rf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.lmc-rf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.lmc-rf-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1E293B;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lmc-rf-input,
+.lmc-rf-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #0F172A;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.lmc-rf-input:focus,
+.lmc-rf-select:focus {
+  border-color: #0D9488;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+}
+
+.lmc-rf-zones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.lmc-rf-zone-chip {
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.lmc-rf-zone-chip.selected {
+  background: #F0FDFA;
+  border-color: #0D9488;
+  box-shadow: 0 0 0 1px #0D9488;
+}
+
+.lmc-rf-zone-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 0.15rem;
+}
+
+.lmc-rf-zone-chip.selected .lmc-rf-zone-name {
+  color: #0D9488;
+}
+
+.lmc-rf-zone-meta {
+  font-size: 0.75rem;
+  color: #64748B;
+}
+
+.lmc-rf-submit-btn {
+  background-color: #0D9488;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+}
+
+.lmc-rf-submit-btn:hover {
+  background-color: #0B7A70;
+  transform: translateY(-1px);
+}
+
+.lmc-rf-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.lmc-rf-demo-hint {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #F1F5F9;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.4;
+  border-left: 3px solid #0D9488;
+}
