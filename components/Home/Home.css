@@ -1,0 +1,543 @@
+/* LastMileConnect - Home Styles */
+
+:root {
+  --lmc-primary: #10b981;
+  --lmc-primary-dark: #059669;
+  --lmc-primary-light: #d1fae5;
+  --lmc-accent: #f59e0b;
+  --lmc-bg-dark: #0f172a;
+  --lmc-bg-card: #1e293b;
+  --lmc-text-main: #f8fafc;
+  --lmc-text-muted: #94a3b8;
+  --lmc-border: rgba(255, 255, 255, 0.1);
+}
+
+.lmc-home-container {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 100%);
+  color: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.lmc-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.lmc-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lmc-brand-icon {
+  font-size: 1.75rem;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 0.35rem 0.6rem;
+  border-radius: 12px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.lmc-brand-text {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.lmc-logo-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+
+.lmc-accent {
+  color: #10b981;
+}
+
+.lmc-badge {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Buttons */
+.lmc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10px;
+}
+
+.lmc-btn-primary {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.lmc-btn-primary:hover {
+  background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+  transform: translateY(-2px);
+}
+
+.lmc-btn-primary:active {
+  transform: translateY(0);
+}
+
+.lmc-btn-nav {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+}
+
+.lmc-btn-large {
+  padding: 0.9rem 2rem;
+  font-size: 1.05rem;
+  border-radius: 12px;
+}
+
+.lmc-glow-btn {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.5);
+}
+
+/* Hero Section */
+.lmc-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.5rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4.5rem 2rem 3rem 2rem;
+}
+
+.lmc-hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+}
+
+.lmc-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
+  animation: lmcPulse 2s infinite;
+}
+
+@keyframes lmcPulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.lmc-hero-title {
+  font-size: 3.2rem;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.25rem 0;
+}
+
+.lmc-gradient-text {
+  background: linear-gradient(135deg, #34d399 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lmc-hero-subtitle {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  max-width: 540px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.lmc-hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.lmc-micro-stat {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+}
+
+/* Preview Card */
+.lmc-hero-card-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.lmc-preview-card {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  overflow: hidden;
+}
+
+.lmc-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 1rem 1.25rem;
+  background: rgba(15, 23, 42, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.lmc-card-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.lmc-card-dot.red { background: #ef4444; }
+.lmc-card-dot.yellow { background: #f59e0b; }
+.lmc-card-dot.green { background: #10b981; }
+
+.lmc-card-title {
+  margin-left: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.lmc-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lmc-route-chip {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.lmc-route-chip.destination {
+  border-color: rgba(16, 185, 129, 0.4);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.lmc-route-tag {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+}
+
+.lmc-route-arrow {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.lmc-fare-comparison {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(15, 23, 42, 0.9);
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 0.25rem;
+}
+
+.lmc-fare-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.lmc-fare-box .label {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-bottom: 0.2rem;
+}
+
+.lmc-fare-box .amount {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.lmc-fare-box .amount.strike {
+  color: #ef4444;
+  text-decoration: line-through;
+}
+
+.lmc-fare-box .amount.highlight {
+  color: #10b981;
+}
+
+.lmc-fare-box .amount small {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.lmc-fare-arrow {
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.lmc-card-footer-info {
+  text-align: center;
+  font-size: 0.76rem;
+  color: #64748b;
+  padding-top: 0.25rem;
+}
+
+/* How It Works */
+.lmc-how-it-works, .lmc-features {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.lmc-section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.lmc-section-subtitle {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 1.05rem;
+  margin: 0 0 3rem 0;
+}
+
+.lmc-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.lmc-step-card {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.lmc-step-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(30, 41, 59, 0.7);
+}
+
+.lmc-step-number {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.07);
+}
+
+.lmc-step-icon {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.lmc-step-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.lmc-step-card p {
+  color: #94a3b8;
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* Features Grid */
+.lmc-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.lmc-feature-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 1.75rem 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.lmc-feature-card:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.lmc-feature-icon {
+  font-size: 2rem;
+  margin-bottom: 0.9rem;
+}
+
+.lmc-feature-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.lmc-feature-card p {
+  color: #94a3b8;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Stations Ticker */
+.lmc-stations-ticker {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.lmc-ticker-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #34d399;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+}
+
+.lmc-ticker-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.lmc-station-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+}
+
+.lmc-station-badge .station-icon {
+  font-size: 1.4rem;
+}
+
+.lmc-station-badge .station-info strong {
+  display: block;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.lmc-station-badge .station-info small {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Footer */
+.lmc-footer {
+  padding: 4rem 2rem 2rem 2rem;
+  text-align: center;
+  background: rgba(10, 15, 29, 0.9);
+}
+
+.lmc-footer-content {
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+}
+
+.lmc-footer-content h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.lmc-footer-content p {
+  color: #94a3b8;
+  margin-bottom: 1.75rem;
+}
+
+.lmc-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.5rem;
+  color: #64748b;
+  font-size: 0.82rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+  .lmc-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+  }
+  .lmc-hero-cta-group {
+    align-items: center;
+  }
+  .lmc-steps-grid, .lmc-features-grid, .lmc-ticker-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .lmc-steps-grid, .lmc-features-grid, .lmc-ticker-grid {
+    grid-template-columns: 1fr;
+  }
+  .lmc-hero-title {
+    font-size: 2.4rem;
+  }
+}
