@@ -16,6 +16,8 @@ export const STORAGE_KEYS = {
 
 /**
  * Creates a standard TripRequest object.
+ * Returns null if required fields (userName, stationName, destinationZone) are empty/missing.
+ * 
  * @param {Object} params
  * @param {string} [params.id]
  * @param {string} params.userName
@@ -23,7 +25,7 @@ export const STORAGE_KEYS = {
  * @param {string} params.destinationZone
  * @param {number} [params.timestamp]
  * @param {"waiting" | "matched"} [params.status]
- * @returns {Object} TripRequest
+ * @returns {Object|null} TripRequest object or null if invalid input
  */
 export function createTripRequest({
   id = `trip_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`,
@@ -32,12 +34,21 @@ export function createTripRequest({
   destinationZone,
   timestamp = Date.now(),
   status = TRIP_STATUS.WAITING,
-}) {
+} = {}) {
+  const cleanName = typeof userName === "string" ? userName.trim() : "";
+  const cleanStation = typeof stationName === "string" ? stationName.trim() : "";
+  const cleanZone = typeof destinationZone === "string" ? destinationZone.trim() : "";
+
+  if (!cleanName || !cleanStation || !cleanZone) {
+    console.error("[LastMileConnect] Invalid TripRequest: userName, stationName, and destinationZone cannot be empty.");
+    return null;
+  }
+
   return {
     id,
-    userName,
-    stationName,
-    destinationZone,
+    userName: cleanName,
+    stationName: cleanStation,
+    destinationZone: cleanZone,
     timestamp,
     status,
   };
@@ -45,6 +56,7 @@ export function createTripRequest({
 
 /**
  * Creates a standard MatchGroup object.
+ * 
  * @param {Object} params
  * @param {string} [params.id]
  * @param {string[]} params.tripIds
@@ -57,15 +69,15 @@ export function createTripRequest({
 export function createMatchGroup({
   id = `match_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`,
   tripIds = [],
-  destinationZone,
+  destinationZone = "",
   farePerPerson = 0,
   totalFare = 0,
   pickupPoint = "Auto Stand Exit Gate 1",
-}) {
+} = {}) {
   return {
     id,
     tripIds,
-    destinationZone,
+    destinationZone: typeof destinationZone === "string" ? destinationZone.trim() : "",
     farePerPerson,
     totalFare,
     pickupPoint,
