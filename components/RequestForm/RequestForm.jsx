@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./RequestForm.css";
 
-// 5-6 sample transit stations with 4-5 destination zones each
+// Sample transit stations with destination zones
 export const SAMPLE_STATIONS = [
   {
     id: "st_indiranagar",
@@ -86,8 +86,8 @@ export const SAMPLE_STATIONS = [
   }
 ];
 
-// Quick demo profiles for 1-click test fill
-const DEMO_NAMES = ["Brundha K", "Aarav Sharma", "Priya Patel", "Rohan Verma", "Sneha Rao"];
+// Quick commuter profile presets
+const COMMUTER_PROFILES = ["Aarav Sharma", "Rohan Verma", "Sneha Rao", "Kavya Iyer", "Vikram Malhotra"];
 
 /**
  * Trip Request Screen Component
@@ -97,7 +97,7 @@ const DEMO_NAMES = ["Brundha K", "Aarav Sharma", "Priya Patel", "Rohan Verma", "
  * @param {Function} [props.onBack] - Callback to return to home screen
  */
 export default function RequestForm({ onTripCreated, onBack }) {
-  const [userName, setUserName] = useState("Brundha K");
+  const [userName, setUserName] = useState("Aarav Sharma");
   const [selectedStationName, setSelectedStationName] = useState(SAMPLE_STATIONS[0].name);
   const [selectedZoneName, setSelectedZoneName] = useState(SAMPLE_STATIONS[0].zones[0].name);
   
@@ -186,7 +186,7 @@ export default function RequestForm({ onTripCreated, onBack }) {
     }
   };
 
-  // Polling / listening effect to check if Person B's matching function matched this trip
+  // Polling / listening effect to check if matching engine matched this trip
   useEffect(() => {
     let interval = null;
     if (isSearching && submittedTrip) {
@@ -369,7 +369,7 @@ export default function RequestForm({ onTripCreated, onBack }) {
         )}
 
         <form className="lmc-request-form" onSubmit={handleSubmit}>
-          {/* Section 1: User Name & Demo Switcher */}
+          {/* Section 1: User Name & Commuter Profile Selector */}
           <div className="lmc-form-section">
             <label className="lmc-form-label" htmlFor="userNameInput">
               <span className="lmc-label-icon">👤</span> Commuter Name
@@ -380,13 +380,13 @@ export default function RequestForm({ onTripCreated, onBack }) {
               className="lmc-input-text"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
-              placeholder="Enter your name (e.g. Brundha K)"
+              placeholder="Enter your name (e.g. Aarav Sharma)"
               required
             />
-            {/* Quick Demo Pill Fillers */}
-            <div className="lmc-demo-quick-names">
-              <span className="demo-label">Demo Quick Fill:</span>
-              {DEMO_NAMES.map((name) => (
+            {/* Quick Commuter Profile Fillers */}
+            <div className="lmc-quick-profile-names">
+              <span className="profile-label">Quick Select:</span>
+              {COMMUTER_PROFILES.map((name) => (
                 <button
                   key={name}
                   type="button"
@@ -413,7 +413,7 @@ export default function RequestForm({ onTripCreated, onBack }) {
               >
                 {SAMPLE_STATIONS.map((station) => (
                   <option key={station.id} value={station.name}>
-                    {station.name} ({station.type})
+                    {station.name} — {station.type}
                   </option>
                 ))}
               </select>
@@ -523,9 +523,9 @@ export default function RequestForm({ onTripCreated, onBack }) {
           </div>
         </form>
 
-        {/* Demo Persistence Notice */}
+        {/* Persistence Notice */}
         <div className="lmc-storage-note">
-          <span>💾 Requests are stored directly to <code>localStorage["tripRequests"]</code> for matching engine pairing.</span>
+          <span>🛡️ Requests are synced directly to your local transit pool for co-commuter matching.</span>
         </div>
       </div>
     </div>

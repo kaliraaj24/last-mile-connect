@@ -32,10 +32,10 @@ export default function Home({ onRequestRide }) {
   ];
 
   const sampleStations = [
-    { name: "Indiranagar Metro", status: "Active Hub", matches: "12 matches in last 10 min" },
-    { name: "MG Road Metro", status: "High Demand", matches: "8 matches in last 10 min" },
-    { name: "Majestic Kempegowda", status: "Active Hub", matches: "19 matches in last 10 min" },
-    { name: "HSR Layout Metro", status: "Fast Matching", matches: "15 matches in last 10 min" }
+    { name: "Indiranagar Metro Station", status: "Active Hub", matches: "12 matches in last 10 min" },
+    { name: "MG Road Metro Station", status: "High Demand", matches: "8 matches in last 10 min" },
+    { name: "Majestic Metro Station (Kempegowda)", status: "Active Hub", matches: "19 matches in last 10 min" },
+    { name: "HSR Layout Metro Station", status: "Fast Matching", matches: "15 matches in last 10 min" }
   ];
 
   return (
@@ -46,7 +46,7 @@ export default function Home({ onRequestRide }) {
           <div className="lmc-brand-icon">🛺</div>
           <div className="lmc-brand-text">
             <span className="lmc-logo-name">LastMile<span className="lmc-accent">Connect</span></span>
-            <span className="lmc-badge">Hackathon Demo</span>
+            <span className="lmc-badge">Live Beta</span>
           </div>
         </div>
         <div className="lmc-nav-actions">
@@ -175,7 +175,7 @@ export default function Home({ onRequestRide }) {
         </div>
       </section>
 
-      {/* Active Stations Demo Bar */}
+      {/* Active Stations Hubs Bar */}
       <section className="lmc-stations-ticker">
         <div className="lmc-ticker-title">
           <span>🟢 Live Station Hubs Supported</span>
@@ -207,7 +207,7 @@ export default function Home({ onRequestRide }) {
           </button>
         </div>
         <div className="lmc-footer-bottom">
-          <p>© {new Date().getFullYear()} LastMileConnect • Built for Transit Hackathon</p>
+          <p>© {new Date().getFullYear()} LastMileConnect • Smart Last-Mile Mobility Network</p>
         </div>
       </footer>
     </div>
