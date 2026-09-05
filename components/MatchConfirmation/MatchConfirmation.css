@@ -1,0 +1,677 @@
+/* LastMileConnect - MatchConfirmation Styles */
+
+:root {
+  --lmc-primary: #0F4C81;         /* Deep Blue for navbar, titles, primary brand */
+  --lmc-primary-dark: #0A3357;    /* Darker Blue for borders & deep accents */
+  --lmc-teal: #0D9488;            /* Teal for primary CTAs, find match button, accents */
+  --lmc-teal-hover: #0B7A70;      /* Darker Teal on hover */
+  --lmc-teal-light: #CCFBF1;      /* Light Teal tint for selected chips & success badges */
+  --lmc-bg-page: #F8FAFC;         /* Clean light-gray page background */
+  --lmc-bg-card: #FFFFFF;         /* Pure white container cards with subtle soft shadow */
+  --lmc-text-heading: #0F172A;    /* Dark slate for readable headings */
+  --lmc-text-body: #334155;       /* Slate for readable body text */
+  --lmc-text-muted: #64748B;      /* Muted gray for subtext and labels */
+  --lmc-border: #E2E8F0;          /* Crisp neutral borders */
+}
+
+.lmc-mc-container {
+  min-height: 100vh;
+  background-color: var(--lmc-bg-page);
+  color: var(--lmc-text-body);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  padding: 2.5rem 1.25rem 4rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.lmc-mc-wrapper {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Header & Navigation */
+.lmc-mc-header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lmc-mc-back-btn {
+  background-color: var(--lmc-bg-card);
+  color: var(--lmc-text-muted);
+  border: 1px solid var(--lmc-border);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lmc-mc-back-btn:hover {
+  background-color: var(--lmc-bg-page);
+  color: var(--lmc-primary);
+  border-color: var(--lmc-border);
+}
+
+.lmc-mc-demo-badge {
+  background-color: var(--lmc-teal-light);
+  color: var(--lmc-primary-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid var(--lmc-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Hero Match Celebration Header */
+.lmc-mc-hero-card {
+  background: linear-gradient(135deg, var(--lmc-primary) 0%, var(--lmc-primary-dark) 100%);
+  border-radius: 24px;
+  padding: 2rem;
+  color: #FFFFFF;
+  box-shadow: 0 12px 30px rgba(15, 76, 129, 0.16);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--lmc-primary-dark);
+}
+
+.lmc-mc-hero-card::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.lmc-mc-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.lmc-mc-success-chip {
+  background: var(--lmc-teal-light);
+  border: 1px solid var(--lmc-teal);
+  color: var(--lmc-primary-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  letter-spacing: 0.03em;
+}
+
+.lmc-mc-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--lmc-teal);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.7);
+  animation: lmcPulse 1.8s infinite;
+}
+
+@keyframes lmcPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(13, 148, 136, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0);
+  }
+}
+
+.lmc-mc-hero-title {
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.4rem 0;
+  line-height: 1.15;
+  color: #FFFFFF;
+}
+
+.lmc-mc-hero-sub {
+  color: var(--lmc-teal-light);
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* PAYOFF HIGHLIGHT: Huge Fare Savings Box */
+.lmc-mc-payoff-card {
+  background-color: var(--lmc-bg-card);
+  border: 2px solid var(--lmc-teal-light);
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 6px 20px rgba(15, 76, 129, 0.06);
+  position: relative;
+}
+
+.lmc-mc-payoff-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.lmc-mc-payoff-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--lmc-teal);
+}
+
+.lmc-mc-savings-pill {
+  background-color: var(--lmc-teal-light);
+  border: 1px solid var(--lmc-teal);
+  color: var(--lmc-teal-hover);
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lmc-mc-fare-comparison {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1rem 1.5rem;
+  padding: 0.75rem 0;
+}
+
+.lmc-mc-fare-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.lmc-mc-fare-subtag {
+  font-size: 0.85rem;
+  color: var(--lmc-text-muted);
+  font-weight: 600;
+}
+
+/* High-impact highlight: Large Fare Savings Number in Teal */
+.lmc-mc-fare-huge {
+  font-size: 3.25rem;
+  font-weight: 900;
+  color: var(--lmc-teal);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.lmc-mc-fare-unit {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--lmc-text-muted);
+}
+
+.lmc-mc-fare-comparison-tag {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lmc-mc-solo-tag {
+  font-size: 0.8rem;
+  color: var(--lmc-text-muted);
+  font-weight: 600;
+}
+
+.lmc-mc-solo-fare {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--lmc-text-muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 2.5px;
+}
+
+.lmc-mc-payoff-highlight-banner {
+  margin-top: 1.25rem;
+  background-color: var(--lmc-teal-light);
+  border-left: 4px solid var(--lmc-teal);
+  padding: 0.85rem 1.15rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lmc-mc-payoff-text {
+  font-size: 0.95rem;
+  color: var(--lmc-primary-dark);
+  font-weight: 700;
+}
+
+.lmc-mc-payoff-tag {
+  font-size: 0.8rem;
+  background-color: var(--lmc-teal);
+  color: #FFFFFF;
+  font-weight: 800;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+}
+
+/* Vehicle & Live Arrival Card */
+.lmc-mc-arrival-card {
+  background-color: var(--lmc-bg-card);
+  border: 1px solid var(--lmc-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(15, 76, 129, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.lmc-mc-arrival-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lmc-mc-auto-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.lmc-mc-auto-icon-box {
+  width: 48px;
+  height: 48px;
+  background-color: var(--lmc-teal-light);
+  border: 1.5px solid var(--lmc-teal);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+}
+
+.lmc-mc-auto-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.lmc-mc-eta-badge {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--lmc-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lmc-mc-eta-live-tag {
+  background-color: var(--lmc-teal-light);
+  color: var(--lmc-teal-hover);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid var(--lmc-teal);
+}
+
+.lmc-mc-auto-detail {
+  font-size: 0.85rem;
+  color: var(--lmc-text-muted);
+}
+
+.lmc-mc-pin-box {
+  background-color: var(--lmc-bg-page);
+  border: 1.5px dashed var(--lmc-border);
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  text-align: center;
+}
+
+.lmc-mc-pin-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--lmc-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.lmc-mc-pin-value {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--lmc-primary);
+  letter-spacing: 0.12em;
+}
+
+/* Pickup Point & Destination Block */
+.lmc-mc-route-box {
+  background-color: var(--lmc-bg-page);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border: 1px solid var(--lmc-border);
+}
+
+.lmc-mc-route-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.lmc-mc-route-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.lmc-mc-route-dot.pickup {
+  background-color: var(--lmc-teal);
+  box-shadow: 0 0 0 3px var(--lmc-teal-light);
+}
+
+.lmc-mc-route-dot.drop {
+  background-color: var(--lmc-primary);
+  box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.2);
+}
+
+.lmc-mc-route-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.lmc-mc-route-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: var(--lmc-text-muted);
+}
+
+.lmc-mc-route-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--lmc-primary);
+}
+
+.lmc-mc-route-sub {
+  font-size: 0.8rem;
+  color: var(--lmc-text-muted);
+}
+
+/* Co-Riders Card */
+.lmc-mc-riders-card {
+  background-color: var(--lmc-bg-card);
+  border: 1px solid var(--lmc-border);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(15, 76, 129, 0.05);
+}
+
+.lmc-mc-riders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.lmc-mc-riders-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--lmc-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lmc-mc-riders-count {
+  font-size: 0.8rem;
+  background-color: var(--lmc-teal-light);
+  color: var(--lmc-teal-hover);
+  font-weight: 800;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid var(--lmc-teal);
+}
+
+.lmc-mc-riders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.lmc-mc-rider-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  background-color: var(--lmc-bg-page);
+  border-radius: 14px;
+  border: 1px solid var(--lmc-border);
+  transition: transform 0.15s ease;
+}
+
+.lmc-mc-rider-item:hover {
+  transform: translateY(-1px);
+  border-color: var(--lmc-teal);
+}
+
+.lmc-mc-rider-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.lmc-mc-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(15, 76, 129, 0.15);
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+.lmc-mc-rider-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.lmc-mc-rider-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--lmc-text-heading);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lmc-mc-you-tag {
+  background-color: var(--lmc-teal-light);
+  color: var(--lmc-teal-hover);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.lmc-mc-rider-status {
+  font-size: 0.8rem;
+  color: var(--lmc-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lmc-mc-rider-status-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--lmc-teal);
+  border-radius: 50%;
+}
+
+.lmc-mc-rider-split-tag {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--lmc-teal);
+  background-color: var(--lmc-teal-light);
+  border: 1px solid var(--lmc-teal);
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+}
+
+/* Action Buttons (CTAs using --lmc-teal) */
+.lmc-mc-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.lmc-mc-btn {
+  width: 100%;
+  padding: 0.95rem 1.5rem;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.lmc-mc-btn-primary {
+  background-color: var(--lmc-teal);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+}
+
+.lmc-mc-btn-primary:hover {
+  background-color: var(--lmc-teal-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(13, 148, 136, 0.45);
+}
+
+.lmc-mc-btn-secondary {
+  background-color: var(--lmc-bg-card);
+  color: var(--lmc-text-body);
+  border: 1.5px solid var(--lmc-border);
+}
+
+.lmc-mc-btn-secondary:hover {
+  background-color: var(--lmc-bg-page);
+  border-color: var(--lmc-teal);
+  color: var(--lmc-primary);
+}
+
+/* Empty / Fallback State */
+.lmc-mc-empty-card {
+  background-color: var(--lmc-bg-card);
+  border: 1px solid var(--lmc-border);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(15, 76, 129, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.lmc-mc-empty-icon {
+  font-size: 3rem;
+  background-color: var(--lmc-teal-light);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--lmc-teal);
+}
+
+.lmc-mc-empty-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--lmc-primary);
+  margin: 0;
+}
+
+.lmc-mc-empty-desc {
+  font-size: 0.95rem;
+  color: var(--lmc-text-muted);
+  max-width: 440px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 520px) {
+  .lmc-mc-container {
+    padding: 1.5rem 1rem 3rem;
+  }
+  
+  .lmc-mc-hero-card {
+    padding: 1.5rem;
+  }
+  
+  .lmc-mc-hero-title {
+    font-size: 1.85rem;
+  }
+  
+  .lmc-mc-fare-huge {
+    font-size: 2.6rem;
+  }
+
+  .lmc-mc-arrival-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .lmc-mc-pin-box {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
